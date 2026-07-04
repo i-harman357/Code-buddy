@@ -1,0 +1,23 @@
+name: DeskTeammate
+options:
+  bundleIdPrefix: com.harmandeep.deskteammate
+  deploymentTarget:
+    macOS: "14.0"
+targets:
+  DeskTeammate:
+    type: application
+    platform: macOS
+    sources:
+      - path: DeskTeammate/Sources
+    info:
+      path: DeskTeammate/Sources/Info.plist
+      properties:
+        LSUIElement: true
+        CFBundleDisplayName: DeskTeammate
+        NSHumanReadableCopyright: ""
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.harmandeep.deskteammate.DeskTeammate
+        ENABLE_HARDENED_RUNTIME: YES
+        CODE_SIGN_STYLE: Automatic
+        SWIFT_VERSION: "5.0"
