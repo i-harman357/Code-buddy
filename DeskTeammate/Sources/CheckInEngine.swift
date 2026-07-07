@@ -129,21 +129,39 @@ final class CheckInEngine: ObservableObject {
                 }
             }
         case .stalling:
-            fireNudgeIfCooledDown(now: now, body: FatigueConfig.stallingNudgeMessage)
+            fireNudgeIfCooledDown(now: now, state: newState, fallback: FatigueConfig.stallingNudgeMessage)
         case .active:
-            fireNudgeIfCooledDown(now: now, body: FatigueConfig.activeNudgeMessage)
+            fireNudgeIfCooledDown(now: now, state: newState, fallback: FatigueConfig.activeNudgeMessage)
         case .flow, .stopped:
             break
         }
     }
 
-    private func fireNudgeIfCooledDown(now: Date, body: String) {
+    private func fireNudgeIfCooledDown(now: Date, state: CheckInState, fallback: String) {
         let cooldown = max(appState.intervalMinutes, 0.5) * 60
         if let last = lastNudgeAt, now.timeIntervalSince(last) < cooldown {
             return
         }
-        LocalNotifier.send(title: "Desk Teammate", body: body)
         lastNudgeAt = now
+
+        guard appState.useClaudeForNudges, KeychainStore.hasAPIKey() else {
+            LocalNotifier.send(title: "Desk Teammate", body: fallback)
+            return
+        }
+
+        let context = NudgeContext(
+            state: state,
+            idleSeconds: idleSeconds,
+            appName: frontmostAppName,
+            appStreakSeconds: appStreakSeconds,
+            switchCount: switchCountInWindow,
+            sessionSeconds: sessionSeconds,
+            isLateNight: isLateNight
+        )
+        Task {
+            let body = await ClaudeDelegate.generateNudgeMessage(context: context, fallback: fallback)
+            LocalNotifier.send(title: "Desk Teammate", body: body)
+        }
     }
 
     private static func systemIdleSeconds() -> TimeInterval {

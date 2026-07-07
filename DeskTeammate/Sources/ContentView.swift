@@ -105,6 +105,16 @@ struct ContentView: View {
                         }
                     }
                 }
+
+                Toggle("Smart nudges (Claude writes them)", isOn: $state.useClaudeForNudges)
+                    .toggleStyle(.switch)
+                    .disabled(!hasAPIKey)
+                    .font(.caption)
+                if !hasAPIKey {
+                    Text("Add a key above to enable Claude-written nudges.")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                }
             }
 
             Divider()

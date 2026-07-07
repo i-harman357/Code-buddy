@@ -8,6 +8,7 @@ struct DockCharacterContainerView: View {
         switch model.kind {
         case .robot: DockCharacterView(model: model)
         case .buddy: BuddyCharacterView(model: model)
+        case .deadpool: DeadpoolCharacterView(model: model)
         }
     }
 }
