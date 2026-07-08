@@ -10,7 +10,9 @@
 		02E2CA1F0BBE600B8F6AAD2B /* FatigueConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12F99F978C8AA8C57363F132 /* FatigueConfig.swift */; };
 		16169C254B98BB47E7E77917 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94889AC55FD7500B00429E4 /* KeychainStore.swift */; };
 		2135ABC366EFFDDCD4267B88 /* BuddyCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929457304DBE7858A2F8A632 /* BuddyCharacterView.swift */; };
+		30F11FE4B52B6A2FA0841557 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98B7BF20F49CA2DFB09EDD7 /* ChatView.swift */; };
 		343BC1E9B72F0FF36762DCEA /* ClaudeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032CCCE176B9A17B52F9DEA9 /* ClaudeDelegate.swift */; };
+		3EA1144373C91948BBB87CDA /* Personality.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535D65795A8F0DE428C2559 /* Personality.swift */; };
 		4AA94C351B2BC2DEB9078AFE /* DockCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ABDD297945D10802C63390 /* DockCharacterView.swift */; };
 		4B0C834DDA32322969625995 /* DockCharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F877A346805B2A9A862465 /* DockCharacterModel.swift */; };
 		522386D3522B44069E88DEF6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4783AE239E8F4D06253DCB /* AppState.swift */; };
@@ -18,10 +20,16 @@
 		74DE2AA2CB004EE9FC657CC2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987B1676D31E8D380C64F99 /* ContentView.swift */; };
 		7E83830EE2C3FE0D41C366D3 /* LocalNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26F9324CB4760D97C8485822 /* LocalNotifier.swift */; };
 		9BFEF78D05FF9774E03D9FB6 /* DeadpoolCharacterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968B87DF0F0D65DE3A449A29 /* DeadpoolCharacterView.swift */; };
+		0869E44F786C42F2AAD1CC2A /* DeadpoolLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6091B7BBE344D70A30712C4 /* DeadpoolLines.swift */; };
+		71752928DB9E472288B4529A /* DeadpoolSpeechBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3F295196D84F58ACCEAD07 /* DeadpoolSpeechBubble.swift */; };
+		A91F98A07303A961E4329797 /* PetMovementEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE7C254FC0F784F83F894D /* PetMovementEngine.swift */; };
 		CCEF778D5F0430D4EB1B6039 /* CheckInEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F8324045AEC386ED445EE1 /* CheckInEngine.swift */; };
 		D6878B9927F4642E2E4AF742 /* DeskTeammateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70BA5C350D00E1CE21E90E /* DeskTeammateApp.swift */; };
 		D712E9602790ED2D6B5C013B /* DockCharacterKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49618C24A963F4BAC18BAAD /* DockCharacterKind.swift */; };
+		E39DC28ECE9187D3EFB2C715 /* ClaudeChatSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 898399667120206E3B0DDF66 /* ClaudeChatSession.swift */; };
 		EFC027D5B610C39BAC83E293 /* DockCharacterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C909799EFE93D0161CE81D0 /* DockCharacterController.swift */; };
+		F833DEB8577ED0D1A8870C9A /* ChatWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E156ECAF6E640656184B758 /* ChatWindowController.swift */; };
+		FFEB2B0C551976828ADECA12 /* PetWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FBD115D132BD957AE0A94E /* PetWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,16 +39,24 @@
 		26F9324CB4760D97C8485822 /* LocalNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotifier.swift; sourceTree = "<group>"; };
 		2AC10CB856BC9B15914056A1 /* DeskTeammate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeskTeammate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4987B1676D31E8D380C64F99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4BAE7C254FC0F784F83F894D /* PetMovementEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetMovementEngine.swift; sourceTree = "<group>"; };
 		50ABDD297945D10802C63390 /* DockCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockCharacterView.swift; sourceTree = "<group>"; };
+		5E156ECAF6E640656184B758 /* ChatWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatWindowController.swift; sourceTree = "<group>"; };
 		67C2F320F10F1FA2A7919309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		898399667120206E3B0DDF66 /* ClaudeChatSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeChatSession.swift; sourceTree = "<group>"; };
 		929457304DBE7858A2F8A632 /* BuddyCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuddyCharacterView.swift; sourceTree = "<group>"; };
 		968B87DF0F0D65DE3A449A29 /* DeadpoolCharacterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadpoolCharacterView.swift; sourceTree = "<group>"; };
+		B6091B7BBE344D70A30712C4 /* DeadpoolLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadpoolLines.swift; sourceTree = "<group>"; };
+		5D3F295196D84F58ACCEAD07 /* DeadpoolSpeechBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadpoolSpeechBubble.swift; sourceTree = "<group>"; };
 		9A4783AE239E8F4D06253DCB /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		9C909799EFE93D0161CE81D0 /* DockCharacterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockCharacterController.swift; sourceTree = "<group>"; };
+		A535D65795A8F0DE428C2559 /* Personality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personality.swift; sourceTree = "<group>"; };
 		AC1FF77E21AA656E2BE7B2C9 /* NtfyClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NtfyClient.swift; sourceTree = "<group>"; };
 		C2F877A346805B2A9A862465 /* DockCharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockCharacterModel.swift; sourceTree = "<group>"; };
 		E49618C24A963F4BAC18BAAD /* DockCharacterKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockCharacterKind.swift; sourceTree = "<group>"; };
 		E94889AC55FD7500B00429E4 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		E98B7BF20F49CA2DFB09EDD7 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		F7FBD115D132BD957AE0A94E /* PetWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetWindowController.swift; sourceTree = "<group>"; };
 		FB70BA5C350D00E1CE21E90E /* DeskTeammateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeskTeammateApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,10 +66,15 @@
 			children = (
 				9A4783AE239E8F4D06253DCB /* AppState.swift */,
 				929457304DBE7858A2F8A632 /* BuddyCharacterView.swift */,
+				E98B7BF20F49CA2DFB09EDD7 /* ChatView.swift */,
+				5E156ECAF6E640656184B758 /* ChatWindowController.swift */,
 				08F8324045AEC386ED445EE1 /* CheckInEngine.swift */,
+				898399667120206E3B0DDF66 /* ClaudeChatSession.swift */,
 				032CCCE176B9A17B52F9DEA9 /* ClaudeDelegate.swift */,
 				4987B1676D31E8D380C64F99 /* ContentView.swift */,
 				968B87DF0F0D65DE3A449A29 /* DeadpoolCharacterView.swift */,
+				B6091B7BBE344D70A30712C4 /* DeadpoolLines.swift */,
+				5D3F295196D84F58ACCEAD07 /* DeadpoolSpeechBubble.swift */,
 				FB70BA5C350D00E1CE21E90E /* DeskTeammateApp.swift */,
 				9C909799EFE93D0161CE81D0 /* DockCharacterController.swift */,
 				E49618C24A963F4BAC18BAAD /* DockCharacterKind.swift */,
@@ -64,6 +85,9 @@
 				E94889AC55FD7500B00429E4 /* KeychainStore.swift */,
 				26F9324CB4760D97C8485822 /* LocalNotifier.swift */,
 				AC1FF77E21AA656E2BE7B2C9 /* NtfyClient.swift */,
+				A535D65795A8F0DE428C2559 /* Personality.swift */,
+				4BAE7C254FC0F784F83F894D /* PetMovementEngine.swift */,
+				F7FBD115D132BD957AE0A94E /* PetWindowController.swift */,
 			);
 			name = Sources;
 			path = DeskTeammate/Sources;
@@ -145,10 +169,15 @@
 			files = (
 				522386D3522B44069E88DEF6 /* AppState.swift in Sources */,
 				2135ABC366EFFDDCD4267B88 /* BuddyCharacterView.swift in Sources */,
+				30F11FE4B52B6A2FA0841557 /* ChatView.swift in Sources */,
+				F833DEB8577ED0D1A8870C9A /* ChatWindowController.swift in Sources */,
 				CCEF778D5F0430D4EB1B6039 /* CheckInEngine.swift in Sources */,
+				E39DC28ECE9187D3EFB2C715 /* ClaudeChatSession.swift in Sources */,
 				343BC1E9B72F0FF36762DCEA /* ClaudeDelegate.swift in Sources */,
 				74DE2AA2CB004EE9FC657CC2 /* ContentView.swift in Sources */,
 				9BFEF78D05FF9774E03D9FB6 /* DeadpoolCharacterView.swift in Sources */,
+				0869E44F786C42F2AAD1CC2A /* DeadpoolLines.swift in Sources */,
+				71752928DB9E472288B4529A /* DeadpoolSpeechBubble.swift in Sources */,
 				D6878B9927F4642E2E4AF742 /* DeskTeammateApp.swift in Sources */,
 				EFC027D5B610C39BAC83E293 /* DockCharacterController.swift in Sources */,
 				D712E9602790ED2D6B5C013B /* DockCharacterKind.swift in Sources */,
@@ -158,6 +187,9 @@
 				16169C254B98BB47E7E77917 /* KeychainStore.swift in Sources */,
 				7E83830EE2C3FE0D41C366D3 /* LocalNotifier.swift in Sources */,
 				53C553E6877032BD704219DD /* NtfyClient.swift in Sources */,
+				3EA1144373C91948BBB87CDA /* Personality.swift in Sources */,
+				A91F98A07303A961E4329797 /* PetMovementEngine.swift in Sources */,
+				FFEB2B0C551976828ADECA12 /* PetWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
