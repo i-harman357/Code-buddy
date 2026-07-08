@@ -57,6 +57,14 @@ struct ContentView: View {
                 .labelsHidden()
             }
 
+            Toggle("Show Deadpool", isOn: $state.enableDesktopPet)
+                .toggleStyle(.switch)
+            if state.enableDesktopPet {
+                Text("Click him anytime to open a live chat. Drag him anywhere.")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            }
+
             Button("Send test ping now") {
                 Task { await state.sendPing() }
             }
@@ -104,6 +112,16 @@ struct ContentView: View {
                                 .foregroundStyle(.secondary)
                         }
                     }
+                }
+
+                Toggle("Smart nudges (Claude writes them)", isOn: $state.useClaudeForNudges)
+                    .toggleStyle(.switch)
+                    .disabled(!hasAPIKey)
+                    .font(.caption)
+                if !hasAPIKey {
+                    Text("Add a key above to enable Claude-written nudges.")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
                 }
             }
 

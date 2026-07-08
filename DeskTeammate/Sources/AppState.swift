@@ -27,6 +27,18 @@ final class AppState: ObservableObject {
     @Published var dockCharacterKind: DockCharacterKind {
         didSet { UserDefaults.standard.set(dockCharacterKind.rawValue, forKey: Keys.dockCharacterKind) }
     }
+    /// When true (and a Claude API key is stored), ACTIVE/STALLING local
+    /// nudges are generated live by ClaudeDelegate instead of the static
+    /// FatigueConfig strings. Falls back to static text automatically if
+    /// there's no key or the request fails.
+    @Published var useClaudeForNudges: Bool {
+        didSet { UserDefaults.standard.set(useClaudeForNudges, forKey: Keys.useClaudeForNudges) }
+    }
+    /// Lets the buddy roam the whole screen as a small floating window instead
+    /// of (or alongside) sitting in the Dock tile. Off by default.
+    @Published var enableDesktopPet: Bool {
+        didSet { UserDefaults.standard.set(enableDesktopPet, forKey: Keys.enableDesktopPet) }
+    }
     @Published var lastPingResult: String = ""
 
     private enum Keys {
@@ -36,6 +48,8 @@ final class AppState: ObservableObject {
         static let isRunning = "isRunning"
         static let showDockCharacter = "showDockCharacter"
         static let dockCharacterKind = "dockCharacterKind"
+        static let useClaudeForNudges = "useClaudeForNudges"
+        static let enableDesktopPet = "enableDesktopPet"
     }
 
     init() {
@@ -47,6 +61,8 @@ final class AppState: ObservableObject {
         isRunning = defaults.bool(forKey: Keys.isRunning)
         showDockCharacter = defaults.bool(forKey: Keys.showDockCharacter)
         dockCharacterKind = DockCharacterKind(rawValue: defaults.string(forKey: Keys.dockCharacterKind) ?? "") ?? .robot
+        useClaudeForNudges = defaults.object(forKey: Keys.useClaudeForNudges) as? Bool ?? true
+        enableDesktopPet = defaults.bool(forKey: Keys.enableDesktopPet)
     }
 
     /// Manual "send test ping now" button — bypasses the check-in engine entirely.

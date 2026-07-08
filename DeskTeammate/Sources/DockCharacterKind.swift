@@ -1,6 +1,7 @@
 enum DockCharacterKind: String, CaseIterable, Identifiable {
     case robot
     case buddy
+    case deadpool
 
     var id: String { rawValue }
 
@@ -8,6 +9,7 @@ enum DockCharacterKind: String, CaseIterable, Identifiable {
         switch self {
         case .robot: return "Robot"
         case .buddy: return "Buddy"
+        case .deadpool: return "Deadpool"
         }
     }
 }
