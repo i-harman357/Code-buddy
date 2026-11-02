@@ -57,6 +57,14 @@ struct ContentView: View {
                 .labelsHidden()
             }
 
+            Toggle("Let him roam your desktop", isOn: $state.enableDesktopPet)
+                .toggleStyle(.switch)
+            if state.enableDesktopPet {
+                Text("Click him anytime to open a live chat.")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            }
+
             Button("Send test ping now") {
                 Task { await state.sendPing() }
             }

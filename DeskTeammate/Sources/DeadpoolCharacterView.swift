@@ -8,6 +8,10 @@ import SwiftUI
 /// sarcastic "wisecrack" personality the Claude delegate uses for nudges.
 struct DeadpoolCharacterView: View {
     @ObservedObject var model: DockCharacterModel
+    /// Only used by the roaming desktop-pet window; the small Dock-tile
+    /// usage leaves these at their defaults and looks exactly as before.
+    var facingRight: Bool = true
+    var isWalking: Bool = false
 
     private var accent: Color {
         switch model.state {
@@ -36,6 +40,12 @@ struct DeadpoolCharacterView: View {
 
     private var zProgress: Double {
         model.animPhase.truncatingRemainder(dividingBy: 22) / 22
+    }
+
+    /// Little footstep bounce while the desktop pet is actually walking;
+    /// stays at 0 for the static Dock-tile usage.
+    private var walkBob: CGFloat {
+        isWalking ? CGFloat(sin(model.animPhase * 0.9)) * 0.05 : 0
     }
 
     var body: some View {
@@ -78,6 +88,8 @@ struct DeadpoolCharacterView: View {
                         .offset(x: s * 0.24, y: -s * 0.26 - s * 0.18 * zProgress)
                 }
             }
+            .scaleEffect(x: facingRight ? 1 : -1, y: 1)
+            .offset(y: s * walkBob)
             .frame(width: geo.size.width, height: geo.size.height)
         }
     }

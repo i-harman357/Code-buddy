@@ -20,7 +20,7 @@ final class DockCharacterController: ObservableObject {
             self?.model.state = state
             self?.updateTimerCadence(for: state)
         }
-        toggleSubscription = appState.$showDockCharacter.sink { [weak self] show in
+        toggleSubscription = appState.$showDockCharacter.dropFirst().sink { [weak self] show in
             show ? self?.install() : self?.uninstall()
         }
         kindSubscription = appState.$dockCharacterKind.sink { [weak self] kind in
@@ -28,7 +28,13 @@ final class DockCharacterController: ObservableObject {
         }
         model.kind = appState.dockCharacterKind
         if appState.showDockCharacter {
-            install()
+            // Defer past App init: calling NSApp.dockTile.display() here would
+            // re-enter SwiftUI's AttributeGraph while it's still constructing
+            // the App's scene graph, which aborts with an AG precondition
+            // failure. Waiting a tick lets the graph settle first.
+            DispatchQueue.main.async { [weak self] in
+                self?.install()
+            }
         }
     }
 

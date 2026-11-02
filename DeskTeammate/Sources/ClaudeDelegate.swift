@@ -68,13 +68,18 @@ enum ClaudeDelegate {
         return text
     }
 
-    private static let systemPrompt = """
-    You are the voice of a desktop work-buddy app called Desk Teammate. Your \
-    personality is sharp, funny, a little sarcastic and irreverent — \
-    wisecracking anti-hero energy — but you genuinely want the user to do \
-    good work and not burn themselves out. Reply with ONE short line only \
-    (max ~15 words). No quotes, no emoji, no hashtags, no preamble.
-    """
+    /// Shared with ClaudeChatSession so the nudge voice and chat voice never
+    /// drift apart. The nudge-specific "keep it to one short line" formatting
+    /// instruction is tacked on here rather than baked into the shared prompt,
+    /// since that constraint is unique to nudges (chat replies can run longer).
+    private static var systemPrompt: String {
+        Personality.systemPrompt + """
+
+
+        For this reply specifically: ONE short line only (max ~15 words). \
+        No quotes, no emoji, no hashtags, no preamble.
+        """
+    }
 
     private static func userPrompt(for c: NudgeContext) -> String {
         switch c.state {
